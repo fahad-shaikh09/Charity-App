@@ -1,10 +1,37 @@
-import React from 'react'
-import { View, Text } from 'react-native'
+import React from 'react';
+import { Container, List, ListItem, Text, Left, Right, Icon } from 'native-base';
 
 export default function Tab1() {
     return (
-        <View>
-            <Text>Tab1</Text>
-        </View>
+        <Container>
+            <List>
+                <ListItem noIndent style={{ backgroundColor: "#cde1f9" }}>
+                    <Left>
+                        <Text>Simon Mignolet</Text>
+                    </Left>
+                    <Right>
+                        <Icon name="arrow-forward" />
+                    </Right>
+                </ListItem>
+
+                <ListItem >
+                    <Left>
+                        <Text>Nathaniel Clyne</Text>
+                    </Left>
+                    <Right>
+                        <Icon name="arrow-forward" />
+                    </Right>
+                </ListItem>
+
+                <ListItem>
+                    <Left>
+                        <Text>Dejan Lovren</Text>
+                    </Left>
+                    <Right>
+                        <Icon name="arrow-forward" />
+                    </Right>
+                </ListItem>
+            </List>
+        </Container>
     )
 }

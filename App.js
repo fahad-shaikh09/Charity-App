@@ -1,6 +1,7 @@
 // import { StatusBar } from 'expo-status-bar';
 import React, { useState, useEffect } from 'react';
-import { Container, Header, Tab, Tabs, TabHeading, Icon, Body, Title, Left, Right, Content, List, ListItem, Text, Spinner } from 'native-base';
+import { Container, Header, Tab, Tabs, TabHeading, Icon, Body, Title, Left, Right, 
+  Content, List, ListItem, Text, Spinner,Card, CardItem, View } from 'native-base';
 import * as Font from 'expo-font';
 import { Ionicons } from '@expo/vector-icons';
 import { StyleSheet } from 'react-native';
@@ -42,21 +43,46 @@ export default function App() {
   }
   return (
     <Container>
-      <Header hasTabs>
-      <Left/>
+       <Header hasTabs>
+        <Left />
         <Body>
-          <Title>Header</Title>
+          <Title>Help!!</Title>
         </Body>
-        <Right/>
+        <Right />
       </Header>
+
+
+      <View style={styles.totalAmounts}>
+        <Card >
+          <CardItem style={styles.received}>
+            <Body >
+              <Text>
+                Received: Rs 1000
+                </Text>
+            </Body>
+          </CardItem>
+        </Card>
+
+        <Card >
+           <CardItem style={styles.donated}>
+            <Body >
+              <Text>
+                Donated: Rs 1000
+                </Text>
+            </Body>
+          </CardItem>
+        </Card>
+        </View>
+
+     
       <Tabs>
-        <Tab heading={<TabHeading><Icon name="camera" /><Text>Camera</Text></TabHeading>}>
+        <Tab heading={<TabHeading><Icon name="arrow-down-outline" /><Text>Received</Text></TabHeading>}>
           <Tab1 />
         </Tab>
-        <Tab heading={<TabHeading><Text>No Icon</Text></TabHeading>}>
+        {/* <Tab heading={<TabHeading><Text>Given</Text></TabHeading>}>
           <Tab2 />
-        </Tab>
-        <Tab heading={<TabHeading><Icon name="apps" /></TabHeading>}>
+        </Tab> */}
+        <Tab heading={<TabHeading><Icon name="arrow-up-outline" /><Text>Donated</Text></TabHeading>}>
           <Tab3 />
         </Tab>
       </Tabs>
@@ -73,7 +99,16 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   totalAmounts: {
-    flex: 1,
-
+    flexDirection: "row",
+    alignItems: "top",
+    justifyContent: 'center',
+  },
+  received: {
+    backgroundColor: "rgb(0, 221, 203)",
+    color: "white",
+  },
+  donated: {
+    backgroundColor: "rgb(239, 125, 127)",
+    color: "white",
   }
 });
